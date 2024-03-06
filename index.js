@@ -1,11 +1,26 @@
-let postTitle = '';
-const titleInputNode = document.querySelector('[data-find="titleInput"]');
+let post = '';
+const titleInputNode = document.querySelector('[data-find="postTitleInput"]');
 const newPostButtonNode = document.getElementById('newPostButton');
 const postsNode = document.querySelector('[data-find="posts"]')
 
 newPostButtonNode.addEventListener('click', function () {
-    postTitle = titleInputNode.value;
+    const postFromUser = getPostFromUser();
+    
+    setPost(postFromUser);
 
-    postsNode.innerText = postTitle;
+    renderPost();
 });
 
+function getPostFromUser() {
+    const post = titleInputNode.value;
+    
+    return post;
+}
+
+function setPost(newPost) {
+    post = newPost;
+}
+
+function renderPost() {
+    postsNode.innerText = post;
+}

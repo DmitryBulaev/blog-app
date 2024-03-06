@@ -3,12 +3,20 @@
     gap: 60px;
 }
 
-.title-input {
+.post-title-input {
   margin-bottom: 30px;
   display: block;
   box-sizing: border-box;
   width: 500px;
   height: 60px;
+}
+
+.post-text-input {
+    margin-bottom: 30px;
+    display: block;
+    box-sizing: border-box;
+    width: 500px;
+    height: 250px;
 }
 
 .new-post-btn {
