@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog App</title>
 
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
-    <h1>Новый пост</h1>
-
-    <input class="title-input" type="text">
-    <button class="publication-btn">Опубликовать</button>
-
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <h1>Приложение блог</h1>
+    <section class="section-row">
+        <div class="colunm">
+            <h2>Новый пост</h2>
+            <input data-find="titleInput" class="title-input" type="text" />
+            <button id="newPostButton" class="new-post-btn">
+                Опубликовать
+            </button>
+        </div>
+        <div class="colunm">
+            <section class="posts-section">
+                <h2>Лента</h2>
+            </section>
+        </div>
+    </section>
     <script src="index.js"></script>
-</body>
+  </body>
 </html>

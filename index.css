@@ -1,12 +1,22 @@
-.title-input {
-    margin-bottom: 30px;
-    display: block;
-    width: 500px;
-    height: 60px;
+.section-row {
+    display: flex;
+    gap: 60px;
 }
 
-.publication-btn {
-    width: 500px;
-    height: 60px;
-    background-color: #0094FF;
+.title-input {
+  margin-bottom: 30px;
+  display: block;
+  box-sizing: border-box;
+  width: 500px;
+  height: 60px;
+}
+
+.new-post-btn {
+  display: block;
+  box-sizing: border-box;
+  width: 500px;
+  height: 60px;
+  background-color: #0094ff;
+  color: #ffffff;
+  border: none;
 }
