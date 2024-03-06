@@ -1,0 +1,12 @@
+.title-input {
+    margin-bottom: 30px;
+    display: block;
+    width: 500px;
+    height: 60px;
+}
+
+.publication-btn {
+    width: 500px;
+    height: 60px;
+    background-color: #0094FF;
+}
