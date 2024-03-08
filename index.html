@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog App</title>
     <link rel="stylesheet" href="reset.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
       rel="stylesheet"
@@ -12,10 +14,14 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <h1>Приложение блог</h1>
+    <div class="title-wrapper">
+      <h1>Приложение блог</h1>
+    </div>
     <section class="section-row">
       <div class="colunm">
-        <h2>Новый пост</h2>
+        <div class="title-wrapper">
+          <h2>Новый пост</h2>
+        </div>
         <input
           data-find="postTitleInput"
           class="post-title-input"
@@ -31,8 +37,10 @@
       </div>
       <div class="colunm">
         <section class="posts-section">
-          <h2>Лента</h2>
-          <div data-find="posts" class="posts">Лента пустая...</div>
+          <div class="title-wrapper">
+            <h2>Лента</h2>
+          </div>
+          <div data-find="posts" class="posts">Тут пока пусто...</div>
         </section>
       </div>
     </section>
