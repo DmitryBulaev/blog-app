@@ -6,6 +6,10 @@ button {
   font-family: inherit;
 }
 
+.blog-title-wrapper {
+  margin: 20px 0 60px 100px;
+}
+
 .title-wrapper {
   margin-bottom: 60px;
 }
@@ -21,25 +25,24 @@ h2 {
 }
 
 .section-row {
-    display: flex;
-    gap: 60px;
+  padding-left: 100px;
+  display: flex;
+  gap: 60px;
 }
 
-.post-title-input {
+.post-title-input,
+.post-text-input{
   margin-bottom: 30px;
   display: block;
   box-sizing: border-box;
   width: 500px;
   height: 60px;
-  text-align: start;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  font-size: 32px;
 }
 
 .post-text-input {
-    margin-bottom: 30px;
-    display: block;
-    box-sizing: border-box;
-    width: 500px;
-    height: 250px;
+  height: 250px;
 }
 
 .new-post-btn {
