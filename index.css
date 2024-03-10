@@ -67,9 +67,16 @@ h2 {
   opacity: 0.6;
 }
 
+.post__date {
+  margin-bottom: 15px;
+  font-size: 25px;
+  color: #0094ff;
+}
+
 .post__title {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   font-size: 32px;
+  font-weight: 700;
 } 
 
 .post__text {
