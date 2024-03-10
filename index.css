@@ -30,6 +30,10 @@ h2 {
   gap: 60px;
 }
 
+.column {
+  width: 510px;
+}
+
 .post-title-input,
 .post-text-input{
   margin-bottom: 30px;
