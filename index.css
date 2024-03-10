@@ -35,7 +35,7 @@ h2 {
 }
 
 .post-title-input,
-.post-text-input{
+.post-text-input {
   margin-bottom: 30px;
   display: block;
   box-sizing: border-box;
@@ -81,7 +81,7 @@ h2 {
   margin-bottom: 25px;
   font-size: 32px;
   font-weight: 700;
-} 
+}
 
 .post__text {
   margin-bottom: 60px;

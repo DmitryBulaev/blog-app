@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog App</title>
     <link rel="stylesheet" href="reset.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
       rel="stylesheet"
@@ -28,15 +28,16 @@
           type="text"
           placeholder="Заголовок"
         />
-        <input 
-          data-find="postTextInput" 
-          class="post-text-input" 
+        <input
+          data-find="postTextInput"
+          class="post-text-input"
           type="text"
           placeholder="Напиши пост"
-         />
-        <button id="newPostButton" class="new-post-btn">
-          Опубликовать
-        </button>
+        />
+        <button id="newPostButton" class="new-post-btn">Опубликовать</button>
+        <div class="validationMessage">
+          Длина заголовка не должна превышать 100 символов
+        </div>
       </div>
       <div class="column">
         <section class="posts-section">
