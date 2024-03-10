@@ -53,7 +53,7 @@ function renderPosts() {
     posts.forEach(post => {
         postsHTML += `
             <div class='post'>
-                ${POSTS_DATE}
+                <div class='post__date'>${POSTS_DATE}</div>
                 <p class='post__title'>${post.title}</p>
                 <p class='post__text'>${post.text}</p>
             </div>
