@@ -84,5 +84,7 @@ h2 {
 } 
 
 .post__text {
+  margin-bottom: 60px;
   font-size: 25px;
+  line-height: 32px;
 }
