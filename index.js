@@ -33,6 +33,18 @@ function getPosts() {
     return posts;
 }
 
+let date = new Date();
+
+options = {
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric"
+};
+
+const POSTS_DATE = new Intl.DateTimeFormat('ru', options).format(date);
+
 function renderPosts() {
     const posts = getPosts();
 
@@ -41,6 +53,7 @@ function renderPosts() {
     posts.forEach(post => {
         postsHTML += `
             <div class='post'>
+                ${POSTS_DATE}
                 <p class='post__title'>${post.title}</p>
                 <p class='post__text'>${post.text}</p>
             </div>
@@ -49,3 +62,4 @@ function renderPosts() {
 
    postsNode.innerHTML = postsHTML;
 }
+

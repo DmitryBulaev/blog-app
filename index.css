@@ -55,4 +55,23 @@ h2 {
   border: none;
   font-size: 32px;
   font-weight: 350;
+  cursor: pointer;
+}
+
+.new-post-btn:hover {
+  opacity: 0.6;
+}
+
+.empty-posts {
+  font-size: 32px;
+  opacity: 0.6;
+}
+
+.post__title {
+  margin-bottom: 20px;
+  font-size: 32px;
+} 
+
+.post__text {
+  font-size: 25px;
 }
