@@ -1,11 +1,15 @@
 const posts = [];
+
+const TITLE_VALIDATION_LIMIT = 10;
+const TEXT_VALIDATION_LIMIT = 20;
+
 const postTitleInputNode = document.querySelector(
   '[data-find="postTitleInput"]'
 );
 const postTextInputNode = document.querySelector('[data-find="postTextInput"]');
 const newPostButtonNode = document.getElementById("newPostButton");
 const postsNode = document.querySelector('[data-find="posts"]');
-const validationMessage = document.getElementById("validation-message");
+const validationMessage = document.getElementById("validationMessage");
 
 newPostButtonNode.addEventListener("click", function () {
   const postFromUser = getPostFromUser();
@@ -15,13 +19,29 @@ newPostButtonNode.addEventListener("click", function () {
   renderPosts();
 });
 
-postTitleInputNode.addEventListener("change", function (event) {
+postTitleInputNode.addEventListener("input", function (event) {
   const currentValue = event.target.value;
-  console.log("change", currentValue, currentValue.length);
-  if (currentValue.length > 10) {
-    console.log("error");
+  if (currentValue.length > TITLE_VALIDATION_LIMIT) {
+    validationMessage.innerText = `Длина зоголовка не должна превышать ${TITLE_VALIDATION_LIMIT} сиволов`;
+    validationMessage.classList.remove("validation-message_hiddden");
+  } else {
+    validationMessage.classList.add("validation-message_hiddden");
   }
 });
+
+postTextInputNode.addEventListener("input", function (event) {
+  const currentValue = event.target.value;
+  if (currentValue.length > TEXT_VALIDATION_LIMIT) {
+    validationMessage.innerText = `Длина зоголовка не должна превышать ${TEXT_VALIDATION_LIMIT} сиволов`;
+    validationMessage.classList.remove("validation-message_hiddden");
+  } else {
+    validationMessage.classList.add("validation-message_hiddden");
+  }
+});
+
+// function validation() {
+
+// }
 
 function getPostFromUser() {
   const title = postTitleInputNode.value;
