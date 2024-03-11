@@ -5,6 +5,7 @@ const postTitleInputNode = document.querySelector(
 const postTextInputNode = document.querySelector('[data-find="postTextInput"]');
 const newPostButtonNode = document.getElementById("newPostButton");
 const postsNode = document.querySelector('[data-find="posts"]');
+const validationMessage = document.getElementById("validation-message");
 
 newPostButtonNode.addEventListener("click", function () {
   const postFromUser = getPostFromUser();
@@ -12,6 +13,14 @@ newPostButtonNode.addEventListener("click", function () {
   addPost(postFromUser);
 
   renderPosts();
+});
+
+postTitleInputNode.addEventListener("change", function (event) {
+  const currentValue = event.target.value;
+  console.log("change", currentValue, currentValue.length);
+  if (currentValue.length > 10) {
+    console.log("error");
+  }
 });
 
 function getPostFromUser() {
