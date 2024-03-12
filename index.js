@@ -10,6 +10,8 @@ const postTextInputNode = document.querySelector('[data-find="postTextInput"]');
 const newPostButtonNode = document.getElementById("newPostButton");
 const postsNode = document.querySelector('[data-find="posts"]');
 const validationMessage = document.getElementById("validationMessage");
+const titleInputLimit = document.getElementById("titleInputLimit");
+const textInputLimit = document.getElementById("textInputLimit");
 
 newPostButtonNode.addEventListener("click", function () {
   const postFromUser = getPostFromUser();
@@ -21,10 +23,12 @@ newPostButtonNode.addEventListener("click", function () {
 
 postTitleInputNode.addEventListener("input", function () {
   validation();
+  titleLimit();
 });
 
 postTextInputNode.addEventListener("input", function () {
   validation();
+  textLimit();
 });
 
 function validation() {
@@ -47,6 +51,32 @@ function validation() {
 
   validationMessage.classList.add("validation-message_hiddden");
   newPostButtonNode.disabled = false;
+}
+
+function titleLimit() {
+  const titleLen = postTitleInputNode.value.length;
+  const titleLimit = titleLen - TITLE_VALIDATION_LIMIT;
+
+  if (titleLen > TITLE_VALIDATION_LIMIT) {
+    titleInputLimit.innerText = `Лимит символов превышен на: ${titleLimit}`;
+    titleInputLimit.classList.remove("title-input-limit_hidden");
+    return;
+  }
+
+  titleInputLimit.classList.add("title-input-limit_hidden");
+}
+
+function textLimit() {
+  const textLen = postTextInputNode.value.length;
+  const textLimit = textLen - TEXT_VALIDATION_LIMIT;
+
+  if (textLen > TEXT_VALIDATION_LIMIT) {
+    textInputLimit.innerText = `Лимит символов превышен на: ${textLimit}`;
+    textInputLimit.classList.remove("text-input-limit_hidden");
+    return;
+  }
+
+  textInputLimit.classList.add("text-input-limit_hidden");
 }
 
 function getPostFromUser() {

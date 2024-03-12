@@ -22,20 +22,30 @@
         <div class="title-wrapper">
           <h2>Новый пост</h2>
         </div>
-        <input
-          data-find="postTitleInput"
-          class="post-title-input"
-          type="text"
-          placeholder="Заголовок"
-        />
-        <span id="titleLetterLimit" class="title-letter-limit"></span>
-        <textarea
-          data-find="postTextInput"
-          class="post-text-input"
-          type="text"
-          placeholder="Напиши пост"
-        ></textarea>
-        <span id="textLetterLimit" class="text-letter-limit"></span>
+        <div class="input-wrapper">
+          <input
+            data-find="postTitleInput"
+            class="post-title-input"
+            type="text"
+            placeholder="Заголовок"
+          />
+          <span
+            id="titleInputLimit"
+            class="title-input-limit title-input-limit_hidden"
+          ></span>
+        </div>
+        <div class="textarea-wrapper">
+          <textarea
+            data-find="postTextInput"
+            class="post-text-input"
+            type="text"
+            placeholder="Напиши пост"
+          ></textarea>
+          <span
+            id="textInputLimit"
+            class="text-input-limit text-input-limit_hidden"
+          ></span>
+        </div>
         <button id="newPostButton" class="new-post-btn">Опубликовать</button>
         <div
           id="validationMessage"

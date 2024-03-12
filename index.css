@@ -34,6 +34,11 @@ h2 {
   width: 510px;
 }
 
+.input-wrapper,
+.textarea-wrapper {
+  margin-bottom: 30px;
+}
+
 .post-title-input,
 .post-text-input {
   display: block;
@@ -44,9 +49,14 @@ h2 {
   font-size: 32px;
 }
 
-.title-letter-limit,
-.text-letter-limit {
-  margin-bottom: 30px;
+.title-input-limit,
+.text-input-limit {
+  font-size: 20px;
+}
+
+.title-input-limit_hidden,
+.text-input-limit_hidden {
+  display: none;
 }
 
 .post-text-input {
