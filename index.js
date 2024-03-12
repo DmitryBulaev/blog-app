@@ -1,7 +1,7 @@
 const posts = [];
 
-const TITLE_VALIDATION_LIMIT = 100;
-const TEXT_VALIDATION_LIMIT = 200;
+const TITLE_VALIDATION_LIMIT = 10;
+const TEXT_VALIDATION_LIMIT = 20;
 
 const postTitleInputNode = document.querySelector(
   '[data-find="postTitleInput"]'
@@ -34,16 +34,19 @@ function validation() {
   if (titleLen > TITLE_VALIDATION_LIMIT) {
     validationMessage.innerText = `Длина зоголовка не должна превышать ${TITLE_VALIDATION_LIMIT} сиволов`;
     validationMessage.classList.remove("validation-message_hiddden");
+    newPostButtonNode.disabled = true;
     return;
   }
 
   if (textLen > TEXT_VALIDATION_LIMIT) {
     validationMessage.innerText = `Длина поста не должна превышать ${TEXT_VALIDATION_LIMIT} сиволов`;
     validationMessage.classList.remove("validation-message_hiddden");
+    newPostButtonNode.disabled = true;
     return;
   }
 
   validationMessage.classList.add("validation-message_hiddden");
+  newPostButtonNode.disabled = false;
 }
 
 function getPostFromUser() {

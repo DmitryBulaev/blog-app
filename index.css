@@ -36,13 +36,17 @@ h2 {
 
 .post-title-input,
 .post-text-input {
-  margin-bottom: 30px;
   display: block;
   box-sizing: border-box;
   width: 500px;
   height: 60px;
   border: 1px solid rgba(0, 0, 0, 0.5);
   font-size: 32px;
+}
+
+.title-letter-limit,
+.text-letter-limit {
+  margin-bottom: 30px;
 }
 
 .post-text-input {
