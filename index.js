@@ -1,7 +1,7 @@
 const posts = [];
 
-const TITLE_VALIDATION_LIMIT = 10;
-const TEXT_VALIDATION_LIMIT = 20;
+const TITLE_VALIDATION_LIMIT = 100;
+const TEXT_VALIDATION_LIMIT = 200;
 
 const postTitleInputNode = document.querySelector(
   '[data-find="postTitleInput"]'
@@ -90,7 +90,11 @@ function getPostFromUser() {
 }
 
 function addPost({ title, text }) {
+  const currentDate = new Date();
+  const date = currentDate.toLocaleString();
+
   posts.push({
+    date,
     title,
     text,
   });
@@ -100,18 +104,6 @@ function getPosts() {
   return posts;
 }
 
-let date = new Date();
-
-options = {
-  year: "numeric",
-  month: "numeric",
-  day: "numeric",
-  hour: "numeric",
-  minute: "numeric",
-};
-
-const POSTS_DATE = new Intl.DateTimeFormat("ru", options).format(date);
-
 function renderPosts() {
   const posts = getPosts();
 
@@ -120,7 +112,7 @@ function renderPosts() {
   posts.forEach((post) => {
     postsHTML += `
         <div class='post'>
-            <div class='post__date'>${POSTS_DATE}</div>
+            <div class='post__date'>${post.date}</div>
             <p class='post__title'>${post.title}</p>
             <p class='post__text'>${post.text}</p>
         </div>
