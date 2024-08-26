@@ -1,0 +1,36 @@
+body {
+  font-family: Inter, sans-serif;
+}
+
+h1 {
+  margin-bottom: 60px;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 500px;
+}
+
+.input__title {
+  display: block;
+  box-sizing: border-box;
+  width: 500px;
+  height: 60px;
+  font-size: 32px;
+}
+
+.input__publication-btn {
+  display: block;
+  box-sizing: border-box;
+  width: 500px;
+  height: 60px;
+  background: #0094ff;
+  border: none;
+  font-size: 32px;
+  color: white;
+  font-family: inherit;
+}
