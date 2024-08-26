@@ -16,12 +16,20 @@
     />
   </head>
   <body>
-    <h1>Новый пост</h1>
-    <div class="input">
-      <input data-find="inputTitle" class="input__title" type="text" />
-      <button id="newPostButton" class="input__new-post-btn">
-        Опубликовать
-      </button>
+    <div class="blog-section">
+      <div class="input-section">
+        <h1>Новый пост</h1>
+        <div class="input">
+          <input data-find="inputTitle" class="input__title" type="text" />
+          <button id="newPostButton" class="input__new-post-btn">
+            Опубликовать
+          </button>
+        </div>
+      </div>
+      <div class="posts-section">
+        <h1>Лента</h1>
+        <div data-text="fullPosts" class="posts">Тут пока пусто...</div>
+      </div>
     </div>
     <script src="index.js"></script>
   </body>

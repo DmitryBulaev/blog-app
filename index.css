@@ -2,6 +2,16 @@ body {
   font-family: Inter, sans-serif;
 }
 
+.blog-section {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+.posts-section {
+  width: 500px;
+}
+
 h1 {
   margin-bottom: 60px;
   font-size: 32px;
@@ -33,4 +43,8 @@ h1 {
   font-size: 32px;
   color: white;
   font-family: inherit;
+}
+
+.posts {
+  font-size: 32px;
 }
