@@ -18,22 +18,32 @@ h1 {
   font-weight: bold;
 }
 
-.input {
+.posts-input {
   display: flex;
   flex-direction: column;
   gap: 30px;
   width: 500px;
 }
 
-.input__title {
+.posts-input__title {
   display: block;
   box-sizing: border-box;
   width: 500px;
   height: 60px;
+  font-family: inherit;
   font-size: 32px;
 }
 
-.input__new-post-btn {
+.posts-input__text {
+  display: block;
+  box-sizing: border-box;
+  width: 500px;
+  height: 250px;
+  font-family: inherit;
+  font-size: 32px;
+}
+
+.posts-input__new-post-btn {
   display: block;
   box-sizing: border-box;
   width: 500px;
@@ -45,6 +55,16 @@ h1 {
   font-family: inherit;
 }
 
-.posts {
+.post {
   font-size: 32px;
+}
+
+.post__title {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.post__text {
+  font-size: 25px;
+  font-weight: 300;
 }
