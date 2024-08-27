@@ -1,7 +1,4 @@
-let post = {
-  title: "",
-  text: "",
-};
+let posts = [];
 
 const postTitleInputNode = document.querySelector("[data-text = inputTitle]");
 const postTextInputNode = document.querySelector("[data-text = inputText]");
@@ -11,9 +8,9 @@ const postsNode = document.querySelector("[data-text = fullPost]");
 newPostButtonNode.addEventListener("click", function () {
   const postFromUser = getPostFromUser();
 
-  setPost(postFromUser);
+  addPost(postFromUser);
 
-  renderPost();
+  renderPosts();
 });
 
 function getPostFromUser() {
@@ -26,23 +23,30 @@ function getPostFromUser() {
   };
 }
 
-function setPost(newPost) {
-  post = newPost;
+function addPost({ title, text }) {
+  posts.push({
+    title,
+    text,
+  });
 }
 
-function getPost() {
-  return post;
+function getPosts() {
+  return posts;
 }
 
-function renderPost() {
-  const post = getPost();
+function renderPosts() {
+  const posts = getPosts();
 
-  const postHTML = `
+  postsHTML = "";
+
+  posts.forEach((post) => {
+    postsHTML += `
     <div class = "post">
         <h2 class = "post__title">${post.title}<h2>
         <p class = "post__text">${post.text}<p>
     <div>
   `;
+  });
 
-  postsNode.innerHTML = postHTML;
+  postsNode.innerHTML = postsHTML;
 }

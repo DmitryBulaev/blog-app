@@ -1,5 +1,6 @@
 body {
   font-family: Inter, sans-serif;
+  padding: 100px;
 }
 
 .blog-section {
@@ -37,6 +38,7 @@ h1 {
 .posts-input__text {
   display: block;
   box-sizing: border-box;
+  resize: none;
   width: 500px;
   height: 250px;
   font-family: inherit;
@@ -50,21 +52,28 @@ h1 {
   height: 60px;
   background: #0094ff;
   border: none;
+  cursor: pointer;
   font-size: 32px;
   color: white;
   font-family: inherit;
 }
 
-.post {
+.posts-input__new-post-btn:hover {
+  opacity: 0.6;
+}
+
+.posts {
   font-size: 32px;
 }
 
 .post__title {
+  margin-bottom: 25px;
   font-size: 32px;
   font-weight: bold;
 }
 
 .post__text {
+  margin-bottom: 40px;
   font-size: 25px;
   font-weight: 300;
 }
