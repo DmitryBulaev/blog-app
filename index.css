@@ -1,9 +1,12 @@
 body {
   font-family: Inter, sans-serif;
-  padding: 100px;
+  padding-top: 100px;
+  width: 100%;
 }
 
 .blog-section {
+  width: 1030px;
+  margin: auto;
   display: flex;
   flex-direction: row;
   gap: 50px;

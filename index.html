@@ -14,6 +14,8 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
+
+    <link rel="shortcut icon" href="blog-icon.png" type="image/x-icon" />
   </head>
   <body>
     <div class="blog-section">
@@ -22,10 +24,19 @@
         <div class="posts-input">
           <input
             data-text="inputTitle"
+            placeholder="Заголовок"
             class="posts-input__title"
             type="text"
           />
-          <textarea data-text="inputText" class="posts-input__text"></textarea>
+          <div
+            data-text="titleValidationMessage"
+            class="title-validation-message"
+          ></div>
+          <textarea
+            data-text="inputText"
+            placeholder="Напиши пост"
+            class="posts-input__text"
+          ></textarea>
           <button id="newPostButton" class="posts-input__new-post-btn">
             Опубликовать
           </button>

@@ -1,9 +1,17 @@
 let posts = [];
 
+const titleMaxLenght = 10;
+const textMaxLenght = 20;
+const titleValidationMessage = `Заголовок больше ${titleMaxLenght} символов`;
+const textValidationMessage = `Пост больше ${textMaxLenght} символов`;
+
 const postTitleInputNode = document.querySelector("[data-text = inputTitle]");
 const postTextInputNode = document.querySelector("[data-text = inputText]");
 const newPostButtonNode = document.getElementById("newPostButton");
 const postsNode = document.querySelector("[data-text = fullPost]");
+const titleValidationNode = document.querySelector(
+  "[data-text = titleValidationMessage]"
+);
 
 newPostButtonNode.addEventListener("click", function () {
   const postFromUser = getPostFromUser();
@@ -50,3 +58,16 @@ function renderPosts() {
 
   postsNode.innerHTML = postsHTML;
 }
+
+// const getValidationMessageForTitle = () => {
+const validationMessageHTML = "";
+
+if (postTitleInputNode.value.lenght > titleMaxLenght) {
+  validationMessageHTML = `
+      <p> Заголовок больше 100 символов <p>
+    `;
+  titleValidationNode.innerHTML = validationMessageHTML;
+}
+// };
+
+// console.log(getValidationMessageForTitle());
