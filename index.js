@@ -1,17 +1,17 @@
 let posts = [];
 
-const titleMaxLenght = 10;
-const textMaxLenght = 20;
-const titleValidationMessage = `Заголовок больше ${titleMaxLenght} символов`;
-const textValidationMessage = `Пост больше ${textMaxLenght} символов`;
+const TITLE_MAX_LENGTH = 50;
+const TEXT_MAX_LENGTH = 200;
 
 const postTitleInputNode = document.querySelector("[data-text = inputTitle]");
 const postTextInputNode = document.querySelector("[data-text = inputText]");
 const newPostButtonNode = document.getElementById("newPostButton");
 const postsNode = document.querySelector("[data-text = fullPost]");
-const titleValidationNode = document.querySelector(
-  "[data-text = titleValidationMessage]"
+const validationMessageNode = document.getElementById("validationMessage");
+const titleSymbolRemainderNode = document.getElementById(
+  "titleSymbolRemainder"
 );
+const textSymbolRemainderNode = document.getElementById("textSymbolRemainder");
 
 newPostButtonNode.addEventListener("click", function () {
   const postFromUser = getPostFromUser();
@@ -20,6 +20,48 @@ newPostButtonNode.addEventListener("click", function () {
 
   renderPosts();
 });
+
+postTitleInputNode.addEventListener("input", validation);
+
+postTextInputNode.addEventListener("input", validation);
+
+titleSymbolRemainderNode.innerHTML = `Осталось ${TITLE_MAX_LENGTH} символов`;
+textSymbolRemainderNode.innerHTML = `Осталось ${TEXT_MAX_LENGTH} символов`;
+
+function validation() {
+  const currentTitleValue = postTitleInputNode.value;
+  const currentTextValue = postTextInputNode.value;
+
+  titleSymbolRemainderNode.innerHTML = `Осталось ${
+    TITLE_MAX_LENGTH - currentTitleValue.length
+  } символов`;
+  if (currentTitleValue.length > TITLE_MAX_LENGTH) {
+    validationMessageNode.innerText = `Заголовок больше ${TITLE_MAX_LENGTH} символов`;
+    validationMessageNode.classList.remove("validation-message_hidden");
+    newPostButtonNode.disabled = true;
+    newPostButtonNode.classList.add("posts-input__new-post-btn_disabled");
+    titleSymbolRemainderNode.classList.add("title-symbol-remainder_hidden");
+    return;
+  }
+
+  textSymbolRemainderNode.innerHTML = `Осталось ${
+    TEXT_MAX_LENGTH - currentTextValue.length
+  } символов`;
+  if (currentTextValue.length > TEXT_MAX_LENGTH) {
+    validationMessageNode.innerText = `Длина поста больше ${TEXT_MAX_LENGTH} символов`;
+    validationMessageNode.classList.remove("validation-message_hidden");
+    newPostButtonNode.disabled = true;
+    newPostButtonNode.classList.add("posts-input__new-post-btn_disabled");
+    textSymbolRemainderNode.classList.add("text-symbol-remainder_hidden");
+    return;
+  }
+
+  validationMessageNode.classList.add("validation-message_hidden");
+  newPostButtonNode.disabled = false;
+  newPostButtonNode.classList.remove("posts-input__new-post-btn_disabled");
+  titleSymbolRemainderNode.classList.remove("title-symbol-remainder_hidden");
+  textSymbolRemainderNode.classList.remove("text-symbol-remainder_hidden");
+}
 
 function getPostFromUser() {
   const title = postTitleInputNode.value;
@@ -50,24 +92,11 @@ function renderPosts() {
   posts.forEach((post) => {
     postsHTML += `
     <div class = "post">
-        <h2 class = "post__title">${post.title}<h2>
-        <p class = "post__text">${post.text}<p>
+      <h2 class = "post__title">${post.title}<h2>
+      <p class = "post__text">${post.text}<p>
     <div>
   `;
   });
 
   postsNode.innerHTML = postsHTML;
 }
-
-// const getValidationMessageForTitle = () => {
-const validationMessageHTML = "";
-
-if (postTitleInputNode.value.lenght > titleMaxLenght) {
-  validationMessageHTML = `
-      <p> Заголовок больше 100 символов <p>
-    `;
-  titleValidationNode.innerHTML = validationMessageHTML;
-}
-// };
-
-// console.log(getValidationMessageForTitle());

@@ -22,24 +22,30 @@
       <div class="input-section">
         <h1>Новый пост</h1>
         <div class="posts-input">
-          <input
-            data-text="inputTitle"
-            placeholder="Заголовок"
-            class="posts-input__title"
-            type="text"
-          />
-          <div
-            data-text="titleValidationMessage"
-            class="title-validation-message"
-          ></div>
-          <textarea
-            data-text="inputText"
-            placeholder="Напиши пост"
-            class="posts-input__text"
-          ></textarea>
+          <div class="posts-input-wrapper">
+            <input
+              data-text="inputTitle"
+              placeholder="Заголовок"
+              class="posts-input__title"
+              type="text"
+            />
+            <div id="titleSymbolRemainder" class="title-symbol-remainder"></div>
+          </div>
+          <div class="post-text-wrapper">
+            <textarea
+              data-text="inputText"
+              placeholder="Напиши пост"
+              class="posts-input__text"
+            ></textarea>
+            <div id="textSymbolRemainder" class="text-symbol-remainder"></div>
+          </div>
           <button id="newPostButton" class="posts-input__new-post-btn">
             Опубликовать
           </button>
+          <div
+            id="validationMessage"
+            class="validation-message validation-message_hidden"
+          ></div>
         </div>
       </div>
       <div class="posts-section">
