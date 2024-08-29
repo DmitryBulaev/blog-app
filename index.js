@@ -40,7 +40,7 @@ function validation() {
     validationMessageNode.classList.remove("validation-message_hidden");
     newPostButtonNode.disabled = true;
     newPostButtonNode.classList.add("posts-input__new-post-btn_disabled");
-    titleSymbolRemainderNode.classList.add("title-symbol-remainder_hidden");
+    titleSymbolRemainderNode.classList.add("symbol-remainder_hidden");
     return;
   }
 
@@ -52,15 +52,15 @@ function validation() {
     validationMessageNode.classList.remove("validation-message_hidden");
     newPostButtonNode.disabled = true;
     newPostButtonNode.classList.add("posts-input__new-post-btn_disabled");
-    textSymbolRemainderNode.classList.add("text-symbol-remainder_hidden");
+    textSymbolRemainderNode.classList.add("symbol-remainder_hidden");
     return;
   }
 
   validationMessageNode.classList.add("validation-message_hidden");
   newPostButtonNode.disabled = false;
   newPostButtonNode.classList.remove("posts-input__new-post-btn_disabled");
-  titleSymbolRemainderNode.classList.remove("title-symbol-remainder_hidden");
-  textSymbolRemainderNode.classList.remove("text-symbol-remainder_hidden");
+  titleSymbolRemainderNode.classList.remove("symbol-remainder_hidden");
+  textSymbolRemainderNode.classList.remove("symbol-remainder_hidden");
 }
 
 function getPostFromUser() {

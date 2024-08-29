@@ -74,8 +74,7 @@ h1 {
   font-size: 20px;
 }
 
-.title-symbol-remainder_hidden,
-.text-symbol-remainder_hidden {
+.symbol-remainder_hidden {
   display: none;
 }
 
