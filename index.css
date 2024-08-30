@@ -91,6 +91,12 @@ h1 {
   font-size: 32px;
 }
 
+.post__date {
+  margin-bottom: 15px;
+  color: #0094ff;
+  font-size: 25px;
+}
+
 .post__title {
   margin-bottom: 25px;
   font-size: 32px;
