@@ -25,43 +25,63 @@ postTitleInputNode.addEventListener("input", validation);
 
 postTextInputNode.addEventListener("input", validation);
 
-titleSymbolRemainderNode.innerHTML = `Осталось ${TITLE_MAX_LENGTH} символов`;
-textSymbolRemainderNode.innerHTML = `Осталось ${TEXT_MAX_LENGTH} символов`;
-
 function validation() {
   const currentTitleValue = postTitleInputNode.value;
   const currentTextValue = postTextInputNode.value;
 
-  titleSymbolRemainderNode.innerHTML = `Осталось ${
-    TITLE_MAX_LENGTH - currentTitleValue.length
-  } символов`;
   if (currentTitleValue.length > TITLE_MAX_LENGTH) {
     validationMessageNode.innerText = `Заголовок больше ${TITLE_MAX_LENGTH} символов`;
     validationMessageNode.classList.remove("validation-message_hidden");
     newPostButtonNode.disabled = true;
     newPostButtonNode.classList.add("posts-input__new-post-btn_disabled");
-    titleSymbolRemainderNode.classList.add("symbol-remainder_hidden");
     return;
   }
 
-  textSymbolRemainderNode.innerHTML = `Осталось ${
-    TEXT_MAX_LENGTH - currentTextValue.length
-  } символов`;
   if (currentTextValue.length > TEXT_MAX_LENGTH) {
     validationMessageNode.innerText = `Длина поста больше ${TEXT_MAX_LENGTH} символов`;
     validationMessageNode.classList.remove("validation-message_hidden");
     newPostButtonNode.disabled = true;
     newPostButtonNode.classList.add("posts-input__new-post-btn_disabled");
-    textSymbolRemainderNode.classList.add("symbol-remainder_hidden");
     return;
   }
 
   validationMessageNode.classList.add("validation-message_hidden");
   newPostButtonNode.disabled = false;
   newPostButtonNode.classList.remove("posts-input__new-post-btn_disabled");
-  titleSymbolRemainderNode.classList.remove("symbol-remainder_hidden");
-  textSymbolRemainderNode.classList.remove("symbol-remainder_hidden");
 }
+
+titleSymbolRemainderNode.innerHTML = `Осталось ${TITLE_MAX_LENGTH} символов`;
+textSymbolRemainderNode.innerHTML = `Осталось ${TEXT_MAX_LENGTH} символов`;
+
+postTitleInputNode.addEventListener("input", function () {
+  const currentTitleValue = postTitleInputNode.value;
+
+  titleSymbolRemainderNode.innerHTML = `Осталось ${
+    TITLE_MAX_LENGTH - currentTitleValue.length
+  } символов`;
+
+  if (currentTitleValue.length > TITLE_MAX_LENGTH) {
+    titleSymbolRemainderNode.classList.add("symbol-remainder_hidden");
+    return;
+  }
+
+  titleSymbolRemainderNode.classList.remove("symbol-remainder_hidden");
+});
+
+postTextInputNode.addEventListener("input", function () {
+  const currentTextValue = postTextInputNode.value;
+
+  textSymbolRemainderNode.innerHTML = `Осталось ${
+    TEXT_MAX_LENGTH - currentTextValue.length
+  } символов`;
+
+  if (currentTextValue.length > TEXT_MAX_LENGTH) {
+    textSymbolRemainderNode.classList.add("symbol-remainder_hidden");
+    return;
+  }
+
+  textSymbolRemainderNode.classList.remove("symbol-remainder_hidden");
+});
 
 function getPostFromUser() {
   const title = postTitleInputNode.value;
